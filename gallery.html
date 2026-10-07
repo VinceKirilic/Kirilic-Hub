@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirilic Hub - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.png">
+</head>
+<body>
+    <div class="wrapper">
+        
+        <!-- HEADER BANNER -->
+        <div class="header-banner glass-box tech-corners">
+            <img src="assets/banner.png" alt="Header Banner">
+        </div>
+
+        <hr class="divider">
+
+        <!-- NAV BUTTONS -->
+        <nav class="nav-buttons">
+            <a href="index.html" class="cool-button">Home</a>
+            <a href="about.html" class="cool-button">About</a>
+            <a href="gallery.html" class="cool-button">Gallery</a>
+            <button class="cool-button">WIP</button>
+        </nav>
+
+        <hr class="divider">
+
+        <!-- MAIN LAYOUT -->
+        <div class="main-layout">
+            
+            <div id="gallery-container" class="posts-section">
+                <div style="text-align: center; color: #8b0000;">Loading gallery database...</div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar glass-box tech-corners">
+                <div class="sidebar-block">
+                    <h3 class="sidebar-title">System Status</h3>
+                    <div class="progress-wrapper">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <p class="status-text">
+                        Nothing for now..
+                    </p>
+                </div>
+                
+                <hr class="divider sidebar-divider">
+                
+                <div class="sidebar-block">
+                    <h3 class="sidebar-title">Network Links</h3>
+                    <div class="social-links">
+                        <a class="cool-button social-btn" href="https://discord.gg/7M9jGAKZu" target="_blank">Discord</a>
+                        <a class="cool-button social-btn" href="https://bsky.app/profile/vincekirilic.bsky.social" target="_blank">Blue Sky</a>
+                        <a class="cool-button social-btn" href="https://x.com/VinceKirilic" target="_blank">Twitter</a>
+                        <a class="cool-button social-btn" href="https://www.deviantart.com/vincekirilic" target="_blank">Deviant Art</a>
+                        <a class="cool-button social-btn" href="https://www.youtube.com/@VinceKirilic" target="_blank">YouTube</a>
+                        <a class="cool-button social-btn" href="https://steamcommunity.com/id/VinceKirilic/" target="_blank">Steam</a>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL WINDOW FOR IMAGES -->
+    <div id="image-modal" class="image-modal">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <img id="modal-img" class="modal-content" src="" alt="Enlarged View">
+    </div>
+
+    <!-- SCRIPT FOR LOADING GALLERY & MODAL -->
+    <script>
+        async function loadGallery() {
+            try {
+                const response = await fetch('gallery.json');
+                if (!response.ok) throw new Error('Failed to load gallery.json');
+                
+                const items = await response.json();
+                const container = document.getElementById('gallery-container');
+                container.innerHTML = '';
+
+                if (items.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: #888;">No gallery artworks found.</p>';
+                    return;
+                }
+
+                items.forEach(item => {
+                    let mediaHtml = '';
+                    let images = Array.isArray(item.media) ? item.media : (Array.isArray(item.media_path) ? item.media_path : [item.media || item.media_path]);
+                    images = images.filter(img => img && img.trim() !== '');
+
+                    if (images.length > 0) {
+                        const singleClass = images.length === 1 ? 'single-image' : '';
+                        const imgsMarkup = images.map(src => `<img src="${src}" alt="Gallery art">`).join('');
+                        mediaHtml = `<div class="post-gallery ${singleClass}">${imgsMarkup}</div>`;
+                    }
+
+                    const formattedText = item.text ? item.text.replace(/\\n/g, '<br>').replace(/\n/g, '<br>') : '';
+
+                    container.innerHTML += `
+                        <article class="post glass-box tech-corners">
+                            <div class="post-header">
+                                <h2 class="post-title">${item.title}</h2>
+                                <span class="post-date">${item.date}</span>
+                            </div>
+                            <div class="post-content">
+                                ${mediaHtml}
+                                ${formattedText ? `<p>${formattedText}</p>` : ''}
+                            </div>
+                        </article>
+                    `;
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('gallery-container').innerHTML = 
+                    '<p style="color: #ff4d4d; text-align: center;">[ERROR] Could not load gallery.json</p>';
+            }
+        }
+
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalClose = document.getElementById('modal-close');
+
+        document.getElementById('gallery-container').addEventListener('click', (e) => {
+            if (e.target.tagName === 'IMG' && e.target.closest('.post-gallery')) {
+                modalImg.src = e.target.src;
+                modal.classList.add('active');
+            }
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === modalClose) modal.classList.remove('active');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) modal.classList.remove('active');
+        });
+
+        loadGallery();
+    </script>
+</body>
+</html>
