@@ -1,6 +1,4 @@
-/* =========================================
-   БАЗОВЫЕ СТИЛИ
-   ========================================= */
+
 * { box-sizing: border-box; }
 
 @font-face {
@@ -8,7 +6,7 @@
     src: url("AudioWide.ttf");
 }
 
-/* Кастомный скроллбар */
+
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #050000; }
 ::-webkit-scrollbar-thumb { background: #8b0000; }
@@ -20,7 +18,7 @@ html, body {
     color: white; display: flex; flex-direction: column;
 }
 
-/* Анимация красного свечения на фоне */
+
 body::before {
     content: ""; position: fixed; top: -20%; left: -10%; width: 120%; height: 70%;
     background: linear-gradient(to bottom, #8b0000, #4a0000 40%, transparent 100%);
@@ -37,9 +35,6 @@ body::before {
     margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; gap: 30px; flex: 1;
 }
 
-/* =========================================
-   ЭЛЕМЕНТЫ ДИЗАЙНА (Стекло, углы, линии)
-   ========================================= */
 .glass-box {
     background-color: rgba(15, 0, 0, 0.8); border: 1px solid #8b0000;
     box-shadow: inset 0 0 20px rgba(139, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.5);
@@ -64,16 +59,12 @@ body::before {
     filter: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 2px #ff4d4d);
 }
 
-/* Разделительная линия */
+
 .divider {
     width: 100%; height: 2px; border: none; background: #8b0000;
     box-shadow: 0 0 10px rgba(255, 77, 77, 0.5); margin: 0;
 }
 
-/* =========================================
-   БЛОКИ КОНТЕНТА
-   ========================================= */
-/* Баннер сверху */
 .header-banner {
     width: 100%; height: 250px; display: flex; justify-content: center; align-items: center; overflow: hidden;
 }
@@ -81,7 +72,6 @@ body::before {
     width: 100%; height: 100%; object-fit: cover; display: block;
 }
 
-/* Кнопки */
 .nav-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 .cool-button {
     padding: 12px 25px; 
@@ -94,8 +84,8 @@ body::before {
     text-transform: uppercase; 
     font-size: 0.9rem; 
     letter-spacing: 1px;
-    text-decoration: none; /* Убирает подчёркивание ссылок */
-    display: inline-block; /* Корректные отступы для ссылок */
+    text-decoration: none;
+    display: inline-block; 
     text-align: center;
 }
 .cool-button:hover { 
@@ -103,7 +93,6 @@ body::before {
     box-shadow: 0 0 12px rgba(255, 77, 77, 0.7); transform: scale(1.05); 
 }
 
-/* Посты */
 .posts-section { display: flex; flex-direction: column; gap: 30px; width: 100%; }
 .post { padding: 25px 30px; display: flex; flex-direction: column; gap: 15px; }
 .post-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #4a0000; padding-bottom: 10px; }
@@ -114,22 +103,18 @@ body::before {
 .post-content p:last-child { margin: 0; }
 
 
-/* =========================================
-   ГАЛЕРЕЯ КАРТИНОК В ПОСТАХ
-   ========================================= */
 .post-gallery {
     display: grid;
     gap: 15px;
     margin: 15px 0;
     width: 100%;
-    /* Адаптивная сетка: картинки сами делят ширину поста */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .post-gallery img {
     width: 100%;
     height: 240px;
-    object-fit: cover; /* Сохраняет пропорции, аккуратно обрезая лишнее */
+    object-fit: cover; 
     border: 1px solid #8b0000;
     box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
     transition: all 0.25s ease;
@@ -141,7 +126,6 @@ body::before {
     transform: scale(1.02);
 }
 
-/* Спец-стиль, если в посте ВСЕГО ОДНА картинка */
 .post-gallery.single-image {
     grid-template-columns: 1fr;
 }
@@ -150,9 +134,6 @@ body::before {
     height: auto;
     max-height: 450px;
 }
-/* =========================================
-   АНИМАЦИИ ПОЯВЛЕНИЯ
-   ========================================= */
 @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(25px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -161,42 +142,34 @@ body::before {
 .header-banner, .divider, .nav-buttons, .post {
     animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-
-/* Каскадная задержка появления постов */
 .post:nth-child(1) { animation-delay: 0.1s; }
 .post:nth-child(2) { animation-delay: 0.2s; }
 .post:nth-child(3) { animation-delay: 0.3s; }
 
-/* =========================================
-   ОСНОВНАЯ РАЗМЕТКА (Две колонки)
-   ========================================= */
 .main-layout {
     display: flex;
     gap: 30px;
-    align-items: flex-start; /* Чтобы сайдбар не растягивался по высоте постов */
+    align-items: flex-start;
     width: 100%;
 }
 
 .posts-section {
-    flex: 1; /* Посты занимают все оставшееся место */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     gap: 30px;
-    min-width: 0; /* Чтобы посты не вылезали за границы */
+    min-width: 0;
 }
 
-/* =========================================
-   САЙДБАР (ПРАВАЯ ПАНЕЛЬ)
-   ========================================= */
 .sidebar {
-    width: 320px; /* Ширина правой панели */
+    width: 320px; 
     flex-shrink: 0;
     padding: 25px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: sticky; /* Панель будет прилипать к экрану */
-    top: 20px; /* Отступ сверху при прокрутке */
+    position: sticky; 
+    top: 20px; 
 }
 
 .sidebar-block {
@@ -214,7 +187,6 @@ body::before {
     text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
 }
 
-/* Полоса прогресса */
 .progress-wrapper {
     width: 100%;
     height: 12px;
@@ -243,7 +215,6 @@ body::before {
     opacity: 0.5;
 }
 
-/* Кнопки соцсетей в сайдбаре */
 .social-links {
     display: flex;
     flex-direction: column;
@@ -258,7 +229,7 @@ body::before {
 }
 
 /* =========================================
-   АДАПТИВНОСТЬ (Телефоны)
+   Mobile stuff
    ========================================= */
 @media (max-width: 850px) {
     .wrapper { padding: 15px 10px; gap: 20px; }
@@ -268,12 +239,9 @@ body::before {
     .post { padding: 20px 15px; }
     .post-header { flex-direction: column; gap: 5px; }
     
-    /* Вертикальный порядок для мобилок */
     .main-layout {
         flex-direction: column;
     }
-
-    /*order: -1 поднимает сайдбар наверх, над постами */
     .sidebar {
         width: 100%;
         position: static;
@@ -291,7 +259,7 @@ body::before {
 }
 
 /* =========================================
-   МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА КАРТИНОК
+   Modal window for pics
    ========================================= */
 .post-gallery img { cursor: zoom-in; }
 
