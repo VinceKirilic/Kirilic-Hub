@@ -1,7 +1,5 @@
 # VinceKirilic — Personal Website
 
-> Personal website of Vince Kirilic.
-
 ## About
 
 This repository contains the source code for my personal website.
@@ -25,25 +23,12 @@ or any other organization.
 - JavaScript
 - GitHub Pages
 
-## Project Status
+## Website Status
 
 Active development
 The website is still being developed. Some pages and features may be
 unfinished, experimental, or temporarily unavailable.
 
-## Repository Structure
-
-```text
-/
-├── index.html
-├── about.html
-├── contacts.html
-├── ...
-├── css/
-├── js/
-├── images/
-└── favicon.ico
-```
 ## License
 The source code of this website is licensed under the MIT License.
 See LICENSE for the full license text.
