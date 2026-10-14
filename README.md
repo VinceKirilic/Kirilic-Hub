@@ -7,8 +7,7 @@ This repository contains the source code for my personal website.
 The website is a place where I publish my artwork, projects, experiments,
 characters, progress, and other creative work.
 
-This is a personal creative project and is not affiliated with Iron Tag Labs
-or any other organization.
+This is a personal creative project and is not affiliated with any organization.
 
 ## Features
 
