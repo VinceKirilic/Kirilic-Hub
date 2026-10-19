@@ -76,7 +76,7 @@
     <script>
         async function loadPosts() {
             try {
-                const response = await fetch('./posts.json', 
+                const response = await fetch('posts.json', 
                                              {cache: 'no-store'});
                 if (!response.ok) throw new Error('Failed to load posts.json');
                 const posts = await response.json();
