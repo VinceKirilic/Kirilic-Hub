@@ -76,7 +76,8 @@
     <script>
         async function loadGallery() {
             try {
-                const response = await fetch('gallery.json');
+                const response = await fetch('gallery.json', 
+                                             {cache: 'no-store'});
                 if (!response.ok) throw new Error('Failed to load gallery.json');
                 
                 const items = await response.json();
