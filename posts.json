@@ -1,5 +1,14 @@
 [
     {
+        "title": "Overhaul",
+        "date": "28.10.2026",
+        "media": [
+            "assets/websiteold.jpg",
+            "assets/websitenew.jpg"
+        ],
+        "text": "So, I’ve completely revamped this site, a full overhaul. Here’s what’s changed:\n• The file structure has been reorganized.\n• The UI has been improved, and a light theme has been added.\n• A functional albums page has been added.\n• And much more."
+    },
+    {
         "title": "Updating website",
         "date": "27.10.2026",
         "media": [],

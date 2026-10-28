@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0000">
+    <title>Kirilic Hub — Albums</title>
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header-banner glass-box" aria-label="Kirilic Hub"><h1 class="site-logo">Kirilic Hub</h1></header>
+        <hr class="divider">
+        <nav class="nav-buttons" aria-label="Main navigation">
+            <a class="cool-button" href="index.html">Home</a>
+            <a class="cool-button" href="about.html">About</a>
+            <a class="cool-button" href="gallery.html">Gallery</a>
+            <button class="cool-button" type="button" disabled title="Work in progress">WIP</button>
+            <a class="cool-button" href="albums.html" aria-current="page">Albums</a>
+        </nav>
+        <hr class="divider">
+        <div class="main-layout">
+            <main id="albums-container" class="posts-section" data-albums data-source="albums.json" aria-live="polite"><p class="empty-state">Loading discography…</p></main>
+            <aside class="sidebar glass-box tech-corners">
+                <section class="sidebar-block" aria-labelledby="work-status"><h2 id="work-status" class="sidebar-title">Work status</h2><div class="progress-wrapper" role="progressbar" aria-label="Work status" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="progress-bar" style="--progress: 80%"></div></div><p class="status-text">Arts maybe.</p></section>
+                <hr class="divider sidebar-divider">
+                <section class="sidebar-block" aria-labelledby="appearance-settings"><h2 id="appearance-settings" class="sidebar-title">Appearance</h2><div class="sidebar-actions"><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">☀ Light theme</button><button id="motion-toggle" class="theme-toggle" type="button" aria-pressed="false">Disable animations</button></div></section>
+                <hr class="divider sidebar-divider">
+                <section class="sidebar-block" aria-labelledby="network-links"><h2 id="network-links" class="sidebar-title">Network links</h2><div class="social-links">
+                    <a class="cool-button social-btn" href="https://discord.gg/7M9jGAKZu" target="_blank" rel="noopener noreferrer">Discord</a>
+                    <a class="cool-button social-btn" href="https://bsky.app/profile/vincekirilic.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+                    <a class="cool-button social-btn" href="https://x.com/VinceKirilic" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a class="cool-button social-btn" href="https://www.deviantart.com/vincekirilic" target="_blank" rel="noopener noreferrer">DeviantArt</a>
+                    <a class="cool-button social-btn" href="https://www.youtube.com/@VinceKirilic" target="_blank" rel="noopener noreferrer">YouTube</a>
+                    <a class="cool-button social-btn" href="https://steamcommunity.com/id/VinceKirilic/" target="_blank" rel="noopener noreferrer">Steam</a>
+                    <a class="cool-button social-btn" href="https://vincekirilic.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</a>
+                </div></section>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

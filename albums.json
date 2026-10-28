@@ -1,0 +1,30 @@
+[
+    {
+        "id": "monochrome",
+        "title": "Monochrome",
+        "type": "Single",
+        "release_date": "2026",
+        "cover": "assets/covers/monochrome-cover.png",
+        "tracks": [
+            {
+                "title": "Monochrome",
+                "duration": "1:32",
+                "audio_url": "assets/audio/Monochrome.mp3"
+            }
+        ]
+    },
+    {
+        "id": "machine",
+        "title": "Machine",
+        "type": "Single",
+        "release_date": "2026",
+        "cover": "assets/covers/machine-cover.jpg",
+        "tracks": [
+            {
+                "title": "Machine",
+                "duration": "1:35",
+                "audio_url": "assets/audio/Machine.mp3"
+            }
+        ]
+    }
+]

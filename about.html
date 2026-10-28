@@ -1,85 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirilic Hub - About</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0000">
+    <title>Kirilic Hub — About</title>
     <link rel="icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
-        
-        <div class="header-banner glass-box tech-corners">
-            <img src="assets/banner.png" alt="Header Banner">
-        </div>
-
+        <header class="header-banner glass-box" aria-label="Kirilic Hub"><h1 class="site-logo">Kirilic Hub</h1></header>
         <hr class="divider">
-
-        <nav class="nav-buttons">
-            <a href="index.html" class="cool-button">Home</a>
-            <a href="about.html" class="cool-button">About</a>
-            <a href="gallery.html" class="cool-button">Gallery</a>
-            <button class="cool-button">WIP</button>
+        <nav class="nav-buttons" aria-label="Main navigation">
+            <a class="cool-button" href="index.html">Home</a>
+            <a class="cool-button" href="about.html" aria-current="page">About</a>
+            <a class="cool-button" href="gallery.html">Gallery</a>
+            <button class="cool-button" type="button" disabled title="Work in progress">WIP</button>
+            <a class="cool-button" href="albums.html">Albums</a>
         </nav>
-
         <hr class="divider">
 
         <div class="main-layout">
             <main class="posts-section">
                 <article class="post glass-box tech-corners">
-                    <div class="post-header">
-                        <h2 class="post-title">About me</h2>
-                        <span class="post-date">Cool txt</span>
-                    </div>
+                    <header class="post-header"><h1 class="post-title">About me</h1><span class="post-date">Hello</span></header>
                     <div class="post-content">
                         <p>Hello world :D</p>
                         <p>I am Vince Kirilic, or just Vince. I am a young man involved in drawing, music production, and to some extent programming. I am from Ukraine.</p>
-                        <p>You can find my work on various platforms Twitter, BlueSky, Newgrounds, and DeviantArt as well as on this website</p>
+                        <p>You can find my work on Twitter, BlueSky, Newgrounds, DeviantArt, and on this website.</p>
                         <p>This website serves as a hub for my creative work, where you can take a look at what I've created.</p>
-                        <p>You can contact me via social media or my email (vincekirilic@gmail.com). I'll try to read all comments on my accounts.</p>
+                        <p>You can contact me via social media or email at <a href="mailto:vincekirilic@gmail.com">vincekirilic@gmail.com</a>. I'll try to read all comments on my accounts.</p>
                     </div>
                 </article>
-
                 <article class="post glass-box tech-corners">
-                    <div class="post-header">
-                        <h2 class="post-title">Stuff I use</h2>
-                        <span class="post-date">and projects</span>
-                    </div>
-                    <div class="post-content">
-                        <p>I typicaly use Krita and VS code and FL Studio. I suppose I have nothing more to say.</p>
-                    </div>
+                    <header class="post-header"><h2 class="post-title">Stuff I use</h2><span class="post-date">Tools &amp; projects</span></header>
+                    <div class="post-content"><p>I typically use Krita, VS Code, and FL Studio.</p></div>
                 </article>
             </main>
 
             <aside class="sidebar glass-box tech-corners">
-                <div class="sidebar-block">
-                    <h3 class="sidebar-title">Work Status</h3>
-                    <div class="progress-wrapper">
-                        <div class="progress-bar" style="width: 80%;"></div>
-                    </div>
-                    <p class="status-text">
-                        Arts maybe.
-                    </p>
-                </div>
-                
+                <section class="sidebar-block" aria-labelledby="work-status"><h2 id="work-status" class="sidebar-title">Work status</h2><div class="progress-wrapper" role="progressbar" aria-label="Work status" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" style="--progress: 80%"></div></div><p class="status-text">Arts maybe.</p></section>
                 <hr class="divider sidebar-divider">
-                
-                <div class="sidebar-block">
-                    <h3 class="sidebar-title">Network Links</h3>
-                    <div class="social-links">
-                        <a class="cool-button social-btn" href="https://discord.gg/7M9jGAKZu" target="_blank">Discord</a>
-                        <a class="cool-button social-btn" href="https://bsky.app/profile/vincekirilic.bsky.social" target="_blank">Blue Sky</a>
-                        <a class="cool-button social-btn" href="https://x.com/VinceKirilic" target="_blank">Twitter</a>
-                        <a class="cool-button social-btn" href="https://www.deviantart.com/vincekirilic" target="_blank">Deviant Art</a>
-                        <a class="cool-button social-btn" href="https://www.youtube.com/@VinceKirilic" target="_blank">YouTube</a>
-                        <a class="cool-button social-btn" href="https://steamcommunity.com/id/VinceKirilic/" target="_blank">Steam</a>
-                        <a class="cool-button social-btn" href="https://vincekirilic.newgrounds.com/" target="_blank">Newgrounds</a>
-                    </div>
-                </div>
+                <section class="sidebar-block" aria-labelledby="appearance-settings"><h2 id="appearance-settings" class="sidebar-title">Appearance</h2><div class="sidebar-actions"><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">☀ Light theme</button><button id="motion-toggle" class="theme-toggle" type="button" aria-pressed="false">Disable animations</button></div></section>
+                <hr class="divider sidebar-divider">
+                <section class="sidebar-block" aria-labelledby="network-links"><h2 id="network-links" class="sidebar-title">Network links</h2><div class="social-links">
+                    <a class="cool-button social-btn" href="https://discord.gg/7M9jGAKZu" target="_blank" rel="noopener noreferrer">Discord</a>
+                    <a class="cool-button social-btn" href="https://bsky.app/profile/vincekirilic.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+                    <a class="cool-button social-btn" href="https://x.com/VinceKirilic" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a class="cool-button social-btn" href="https://www.deviantart.com/vincekirilic" target="_blank" rel="noopener noreferrer">DeviantArt</a>
+                    <a class="cool-button social-btn" href="https://www.youtube.com/@VinceKirilic" target="_blank" rel="noopener noreferrer">YouTube</a>
+                    <a class="cool-button social-btn" href="https://steamcommunity.com/id/VinceKirilic/" target="_blank" rel="noopener noreferrer">Steam</a>
+                    <a class="cool-button social-btn" href="https://vincekirilic.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</a>
+                </div></section>
             </aside>
         </div>
-
     </div>
 </body>
 </html>
