@@ -39,4 +39,4 @@ reused, redistributed, or modified without permission.
 This website was created while listening to Yo mama jokes. 
 I don’t know how to use tools, so I’m building the website using plain HTML, CSS, and JS.
 ur mom
-###### BALLS
+I don't think anyone is reading this, lmao
