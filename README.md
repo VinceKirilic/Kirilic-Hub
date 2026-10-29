@@ -2,15 +2,14 @@
 
 This repository contains the source code for my personal website.
 
-The website is a place where I publish my artwork, projects, experiments,
-characters, progress, and other creative work.
-
-This is a personal creative project and is not affiliated with any organization.
+The website is a place where I publish my artwork, projects,
+characters, and other creative work.
 
 ## Features
 
 - Personal portfolio
 - Artwork
+- Music
 - Development progress
 
 ## Technologies
@@ -19,12 +18,6 @@ This is a personal creative project and is not affiliated with any organization.
 - CSS3
 - JavaScript
 - GitHub Pages
-
-## Website Status
-
-Active development
-The website is still being developed. Some pages and features may be
-unfinished, experimental, or temporarily unavailable.
 
 ## License
 The source code of this website is licensed under the MIT License.
@@ -41,7 +34,9 @@ otherwise stated.
 These materials are not included under the MIT License and may not be
 reused, redistributed, or modified without permission.
 
-## Author
-Vince Kirilic
-Digital artist and programmer.
-GitHub: @VinceKirilic
+## Also Stuff:
+
+This website was created while listening to Yo mama jokes. 
+I don’t know how to use tools, so I’m building the website using plain HTML, CSS, and JS.
+ur mom
+###### BALLS
