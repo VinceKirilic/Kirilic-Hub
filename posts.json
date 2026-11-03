@@ -1,5 +1,13 @@
 [
     {
+       "title": "Birthday",
+       "date": "03.11.2026"
+        "media": [
+            "assets/birthday.png"
+        ],
+        "text": "It's my birthday, I'm 1 year older now :3"
+    },
+    {
         "title": "Overhaul",
         "date": "28.10.2026",
         "media": [
