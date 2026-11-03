@@ -1,5 +1,21 @@
 [
     {
+        "title": "Birthday",
+        "date": "03.11.2026",
+        "media": [
+            "assets/birthday.png"
+        ],
+        "text": "It's my birthday. I'm 1 year older now :3"
+    },
+    {
+        "title": "Silly",
+        "date": "02.11.2026",
+        "media": [
+            "assets/silly.png"
+        ],
+        "text": "there is not even a thought in his head, only 'meow:3'"
+    },
+    {
         "title": "Nicu Sides",
         "date": "30.10.2026",
         "media": [
